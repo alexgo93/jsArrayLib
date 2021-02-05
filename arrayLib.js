@@ -1,38 +1,42 @@
 let arrayLib = {
     chain(collection) {
         this.chainCollection = collection;
-        let clone = Object.assign({}, this);
+        let self = this;
 
-        this.take = function (n) {
-            this.chainCollection = clone.take(this.chainCollection, n);
+        let libCopy = {
+            take(n) {
+                arrayLib.chainCollection = self.take(arrayLib.chainCollection, n);
 
-            return this;
+                return this;
+            },
+
+            value() {
+                return arrayLib.chainCollection;
+            },
+
+            skip(n) {
+                arrayLib.chainCollection = self.skip(arrayLib.chainCollection, n);
+
+                return this;
+            },
+
+            map(callback) {
+                arrayLib.chainCollection = self.map(arrayLib.chainCollection, callback);
+
+                return this;
+            },
+
+            filter(callback) {
+                arrayLib.chainCollection = self.filter(arrayLib.chainCollection, callback);
+
+                return this;
+            },
         };
 
-        this.skip = function (n) {
-            this.chainCollection = clone.skip(this.chainCollection, n);
 
-            return this;
-        };
-
-        this.map = function (callback) {
-            this.chainCollection = clone.map(this.chainCollection, callback);
-
-            return this;
-        };
-
-        this.filter = function (callback) {
-            this.chainCollection = clone.filter(this.chainCollection, callback);
-
-            return this;
-        };
-
-        return this;
+        return libCopy;
     },
 
-    value() {
-        return this.chainCollection;
-    },
 
     take(collection, n) {
         let takenCollection = [];
