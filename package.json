@@ -1,0 +1,25 @@
+{
+  "name": "@alexgo93/jsarraylib",
+  "version": "1.0.0",
+  "description": "Js array library",
+  "main": "arrayLib.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexgo93/jsArrayLib.git"
+  },
+  "keywords": [
+    "js",
+    "arrays",
+    "library",
+    "fundamentals"
+  ],
+  "author": "Alex Golenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexgo93/jsArrayLib/issues"
+  },
+  "homepage": "https://github.com/alexgo93/jsArrayLib#readme"
+}
