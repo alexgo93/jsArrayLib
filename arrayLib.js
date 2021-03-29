@@ -83,6 +83,4 @@ let arrayLib = {
 
         return filteredCollection;
     }
-}
-
-console.log(arrayLib.chain([1, 2, 3, 4]).take(2).skip(1).value());
+};
