@@ -39,6 +39,10 @@ let arrayLib = {
 
 
     take(collection, n) {
+        if (n <= 0) {
+            return undefined;
+        }
+
         let takenCollection = [];
         for (let i = 0; i < n; i++) {
             takenCollection[i] = collection[i];
@@ -48,6 +52,10 @@ let arrayLib = {
     },
 
     skip(collection, n) {
+        if (n <= 0) {
+            return undefined;
+        }
+
         let skippedCollection = [];
         collectionEnd = collection.length - 1;
 
@@ -84,3 +92,5 @@ let arrayLib = {
         return filteredCollection;
     }
 };
+
+module.exports = arrayLib;
